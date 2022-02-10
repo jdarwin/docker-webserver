@@ -1,0 +1,6 @@
+FROM jdarwin/docker-webserver
+ADD ./devopsIQ /var/www/html/devopsIQhttps://github.com/hshar/devopsIQ.git
+Execute shell:
+docker rm -f $(docker ps -a -q)
+docker build /var/lib/jenkins/workspace/docker-webserver/ -t jenkins
+docker run -it -p 82:80 -d jenkins
