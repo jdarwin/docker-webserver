@@ -1,7 +1,7 @@
 FROM ubuntu 
-RUN /usr/bin/sudo apt-get update 
-RUN /usr/bin/sudo apt-get install –y apache2 
-RUN /usr/bin/sudo apt-get install –y apache2-utils 
-RUN /usr/bin/sudo apt-get clean 
+RUN apt update 
+RUN apt install –y apache2 
+RUN apt install –y apache2-utils 
+RUN apt clean 
 EXPOSE 80 CMD ["apache2ctl", "-D", "FOREGROUND"]
 ADD ./index.html /var/www/html
